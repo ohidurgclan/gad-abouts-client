@@ -1,0 +1,26 @@
+.offer-area {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  padding: 30px;
+}
+.offer-area h2,
+h3 {
+  color: #5c0a3f;
+}
+.offer-area {
+  font-size: 18px;
+  font-weight: 600;
+}
+.info {
+  height: 285px;
+  width: 90%;
+  padding: 5px;
+}
+.info h4 {
+  font-weight: 700;
+  color: #5c0a3f;
+}
+.info p {
+  font-size: 18px;
+  font-weight: 600;
+}

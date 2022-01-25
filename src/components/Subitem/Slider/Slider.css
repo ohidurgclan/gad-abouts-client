@@ -1,0 +1,10 @@
+.carousel-caption div {
+    text-align: right;
+    margin-top: -20rem;
+}
+.carousel-caption h1 {
+    font-size: 3rem;
+}
+.txt-left {
+    text-align: left !important;
+}

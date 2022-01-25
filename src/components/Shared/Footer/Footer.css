@@ -1,0 +1,15 @@
+.footer-item {
+  height: 80px;
+  background-color: #218784;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.footer-item h5 {
+  font-size: 1rem;
+}
+.footer-txt {
+  color: #5c0a3f;
+}

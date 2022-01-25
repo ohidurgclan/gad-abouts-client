@@ -1,0 +1,13 @@
+.add-reg-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.add-reg-form form input {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.global-left {
+  margin-left: 4rem;
+}

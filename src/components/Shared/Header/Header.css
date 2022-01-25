@@ -1,0 +1,29 @@
+.header-section {
+  background-color: #218784;
+  color: #fff;
+}
+.logo {
+  color: #5c0a3f;
+  font-weight: 700;
+  font-size: 35px;
+  text-decoration: none;
+}
+.nav-bar {
+  text-decoration: none;
+  padding-left: 35px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.nav-link {
+  color: #fff !important;
+}
+.navbar-text {
+  color: #34d1ff;
+}
+.navbar-text a {
+  color: #fff;
+  text-decoration: none;
+}

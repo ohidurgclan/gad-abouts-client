@@ -1,0 +1,31 @@
+
+.service-card {
+    flex-direction: row;
+    margin-top: 20px;
+    display: flex !important;
+    margin-bottom: 3px !important;
+    height: 260px;
+}
+.service-card h5, span {
+    color: #071836;
+}
+.card-imgs {
+    width: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.service-info {
+    padding: 20px;
+    box-shadow: 0px 1px 10px 2px #d3d3d3;
+}
+.content p {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.content a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #5c0a3f;
+    font-size: 1.3rem;
+}
