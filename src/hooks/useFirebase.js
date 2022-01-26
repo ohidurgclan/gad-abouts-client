@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
 import initializeFirebase from '../Login/Firebase/firebase.init';
@@ -17,10 +16,12 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name, history) => {
+    const registerUser = (email, password, name, history) =>
+    {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then((userCredential) =>
+            {
                 setAuthError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
@@ -29,17 +30,20 @@ const useFirebase = () => {
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
-                }).then(() => {
-                }).catch((error) => {
+                }).then(() =>
+                {
+                }).catch((error) =>
+                {
                 });
-                history.replace('/admindashboard');
+                history.replace('/dashboard');
             })
-            .catch((error) => {
+            .catch((error) =>
+            {
                 setAuthError(error.message);
                 console.log(error);
             })
             .finally(() => setLoading(false));
-    }
+    };
 
     const loginUser = (email, password, location, history) => {
         setLoading(true);
@@ -55,16 +59,19 @@ const useFirebase = () => {
             .finally(() => setLoading(false));
     }
 
-    const signInWithGoogle = (location, history) => {
+    const signInWithGoogle = (location, history) =>
+    {
         setLoading(true);
         signInWithPopup(auth, googleProvider)
-            .then((result) => {
+            .then((result) =>
+            {
                 const user = result.user;
                 saveUser(user.email, user.displayName, 'PUT');
                 setAuthError('');
-                const terGet = location?.state?.from || '/admindashboard';
+                const terGet = location?.state?.from || '/dashboard';
                 history.replace(terGet);
-            }).catch((error) => {
+            }).catch((error) =>
+            {
                 setAuthError(error.message);
             }).finally(() => setLoading(false));
     }
@@ -87,10 +94,10 @@ const useFirebase = () => {
     }, [auth])
 
     useEffect(() => {
-        fetch(`http://localhost:7040/users/${user.email}`)
+        fetch(`http://localhost:7040/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
-    }, [user.email])
+    }, [user?.email])
 
     const logOut = () => {
         setLoading(true);

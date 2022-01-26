@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer'
 import Package from '../Subitem/Package/Package';
 import './Packages.css';
 
@@ -14,7 +16,8 @@ const Packages = () => {
     }, []);
 
     return (
-        <>
+      <>
+        <Header></Header>
           <div className="service-pack">
           <Container className="mb-5 mt-5">
             <Row>
@@ -27,7 +30,8 @@ const Packages = () => {
             }
             </Row>
           </Container>
-          </div>
+        </div>
+        <Footer></Footer>
         </>
     );
 };

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { useParams } from 'react-router';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import './Order.css';
 
 const Order = () => {    
@@ -22,7 +24,8 @@ const Order = () => {
 
 
     return (
-        <>
+      <>
+      <Header></Header>
       <Container className="mt-5 mb-5">
         <Row>
           <Col className="my-5" md={12}>
@@ -45,7 +48,8 @@ const Order = () => {
               <img className="img img-fluid w-75" src={order?.img} alt="" />
             </Col>
         </Row>
-      </Container>  
+        </Container>
+      <Footer></Footer>  
         </>
     );
 };

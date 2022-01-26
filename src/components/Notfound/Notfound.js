@@ -1,11 +1,14 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer'
 import './Notfound.css';
 
 const Notfound = () => {
     return (
         <>
+            <Header></Header>
             <Container>
                 <Row>
                     <Col>
@@ -22,6 +25,7 @@ const Notfound = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
         </>
     );
 };

@@ -1,18 +1,21 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer'
 import './About.css';
 
 const About = () => {
     return (
         <>
+            <Header></Header>
             <Container>
                 <Row>
                     <Col lg={6}>
                         <div className="offer-area">
                             <h2 className="fw-bold">About Us</h2>
                             <br />
-                            <h3 className="fw-bold"><span></span>Tour-Jackpot</h3>
-                            <p>‘Tour-Jackpot’ has different departments that are made out of blended age gatherings of clientss who are 2 through 50-year-olds and another departments of multi-year-olds, who figure out how to mind, enable, work, to play and collaborate with one another.
+                            <h3 className="fw-bold"><span></span>Gad Abouts</h3>
+                            <p>"Gad Abouts" has different departments that are made out of blended age gatherings of clientss who are 2 through 50-year-olds and another departments of multi-year-olds, who figure out how to mind, enable, work, to play and collaborate with one another.
                                 In the blended age amass words, clients gain from each other as they communicate in a Hotel setting. They figure out how to mind, enable, work, to play and coordinate with one another. Learning in a blended age aggregate animates a more prominent premium and supports participation.
                                 The more youthful youngsters learn through perception of the more established clientss. The two and multi year old’s social and scholarly improvement is upgraded by this strategy for age gathering.
                                 Blended age bunches upgrade both more youthful and more seasoned clientss’ inspiration and fearlessness. This inheritance of duty and helping other people is the point of convergence of the blended age-bunch setting.
@@ -45,6 +48,7 @@ const About = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
         </>
     );
 };

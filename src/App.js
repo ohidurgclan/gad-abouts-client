@@ -6,8 +6,6 @@ import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
 import Notfound from './components/Notfound/Notfound';
 import Packages from './components/Packages/Packages';
-import Footer from './components/Shared/Footer/Footer'
-import Header from './components/Shared/Header/Header';
 import Sign from './components/Signin/Sign';
 import Authprovider from './contexts/Authprovider';
 import Order from './components/Private/Order/Order';
@@ -22,7 +20,6 @@ function App() {
     <>
       <Authprovider>
         <Router>
-          <Header></Header>
           <Switch>
             <Route exact path="/">
             <Home></Home>
@@ -36,7 +33,7 @@ function App() {
           <Route exact path="/blogs">
             <Packages></Packages>
           </Route>
-          <PrivateRoute exact path="/contact">
+          <PrivateRoute path="/contact">
             <Contact></Contact>
           </PrivateRoute>
           <Route exact path="/login">
@@ -48,17 +45,16 @@ function App() {
           <PrivateRoute exact path="/package/:packageid">
             <Order></Order>
           </PrivateRoute>
-          <PrivateRoute exact path="/myBooking">
+          <PrivateRoute path="/myBooking">
             <MyOrder></MyOrder>
           </PrivateRoute>
-          <PrivateRoute exact path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
           </PrivateRoute>   
           <Route exact path="*">
             <Notfound></Notfound>
           </Route>
         </Switch>
-        <Footer></Footer>
         </Router>
       </Authprovider>
     </>

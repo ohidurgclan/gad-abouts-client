@@ -4,7 +4,7 @@
  * Projects Bullet Points.
     * React default Scripts And Components Scripts.
     * Using React Bootstrap Library.
-    * Separate Components and Private Components with React Routing.
+    * Admin and Private Components with React Routing.
     * Dynamic Login System By Firebase Authentication.
     * MongoDB Curd Server for dynamic data and Heroku Server.
 
@@ -15,7 +15,7 @@
 ### `npm install`
 #### You Can Build it For live deploy with the Command Line Below.
 ### `npm run build`
-#### Open Live Link [Tour-Jackpot](https://tour-jackpot.netlify.app/) to view it in the browser.
+#### Open Live Link [Gad Abouts](https://gad-abouts.netlify.app/) to view it in the browser.
 
 ### Follow Me in [Facebook](https://www.facebook.com/ohidur.AlexMarcer)
 # `Thank You For Visiting My Repository`.

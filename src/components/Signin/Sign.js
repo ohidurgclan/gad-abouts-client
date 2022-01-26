@@ -1,6 +1,8 @@
-import { Alert, Button, Container, Row } from 'react-bootstrap';
+import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer'
 import './Sign.css';
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
@@ -19,8 +21,10 @@ const Sign = () => {
     
     return (
         <>
-            <Container className="mt-5 mb-5 d-flex">
-                <Row className="justify-content-center">
+            <Header></Header>
+            <Container className="mt-5 mb-5">
+              <Row>
+                  <Col lg={6} md={6} sm={12}>
                     <h3 style={{ fontWeight: '500', color: ' #5c0a3f', mt: 5, mb: 5 }}>Please Login</h3>
                     {user?.email && <Alert style={{ width: '37.8%' }} severity="success">Log in Successfully</Alert>}
                     {authError && <Alert style={{ width: '37.8%' }} severity="error">{authError}</Alert>}
@@ -36,9 +40,11 @@ const Sign = () => {
                         <Button style={{ color: ' #5c0a3f', fontSize: '1.1rem', marginBottom: '2rem'}} variant="text" type="submit">New User? Please Sign Up</Button>
                     </NavLink>
                     <h3 className="text-center">- - - - - - - - - - - - - - - - - OR - - - - - - - - - - - - - - - - -</h3>
-                    <Button onClick={handleGoogleLogin} style={{ width: '20%', height: '2.5rem', backgroundColor: '#ff5a3c', color: '#fff', marginTop: '3rem', marginBottom: '2rem' }} type="submit">Login With Google</Button>
-                </Row>
+                    <Button onClick={handleGoogleLogin} style={{ width: '20%', height: '2.5rem', backgroundColor: '#ff5a3c', color: '#fff', marginTop: '3rem', marginBottom: '2rem' }} type="submit">Login With Google</Button>      
+                  </Col>     
+              </Row>
             </Container>
+        <Footer></Footer>
         </>
     );
 };

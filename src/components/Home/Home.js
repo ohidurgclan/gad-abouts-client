@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer'
 import Package from '../Subitem/Package/Package';
 import Slider from '../Subitem/Slider/Slider';
 import './Home.css';
@@ -20,6 +22,7 @@ const Home = () => {
     }, [page]);
     return (
         <>
+            <Header></Header>
             <Slider></Slider>
             <Container className="mt-5 mb-5">
             <Row>
@@ -43,6 +46,7 @@ const Home = () => {
                 </div>        
             </Row>  
             </Container>
+        <Footer></Footer>
         </>
     );
 };
