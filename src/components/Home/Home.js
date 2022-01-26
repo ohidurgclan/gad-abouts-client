@@ -1,24 +1,46 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import useBlogs from '../../hooks/useBlogs';
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import Package from '../Subitem/Package/Package';
 import Slider from '../Subitem/Slider/Slider';
 import './Home.css';
 const Home = () => {
-    const [blogs] = useBlogs();
+    const [products, setProducts] = useState([]);
+    const [page, setPage] = useState(0);
+    const [pageCount, setPageCount] = useState(0);
+    const size = 10;
+    useEffect(() => {
+        fetch(`http://localhost:7040/blogs?page=${page}&&size=${size}`)
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data.items);
+                const count = data.count;
+                const pageNumber = Math.ceil(count / size);
+                setPageCount(pageNumber);
+            });
+    }, [page]);
     return (
         <>
             <Slider></Slider>
             <Container className="mt-5 mb-5">
             <Row>
             <Col lg={9} md={9} sm={12} xs={12}>
-                {
-                  blogs.slice(0, 6).map(packageItem => <Package
+              {
+                  products?.map(packageItem => <Package
                   key={packageItem._id}
                   package={packageItem}
                   ></Package>)
               }
             </Col>
+                <div className="pagination">
+                        {
+                            [...Array(pageCount).keys()]
+                                .map(number => <Button
+                                    className={number === page ? 'selected' : ''}
+                                    key={number}
+                                    onClick={() => setPage(number)}
+                                >{number + 1}</Button>)
+                        }
+                </div>        
             </Row>  
             </Container>
         </>

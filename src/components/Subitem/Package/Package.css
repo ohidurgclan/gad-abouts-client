@@ -6,9 +6,6 @@
     margin-bottom: 3px !important;
     height: 260px;
 }
-.service-card h5, span {
-    color: #071836;
-}
 .card-imgs {
     width: 250px;
     background-size: cover;
@@ -21,11 +18,14 @@
 }
 .content p {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 2.4vmin;
 }
 .content a {
     text-decoration: none;
     font-weight: 600;
     color: #5c0a3f;
-    font-size: 1.3rem;
+    font-size: 2.4vmin;
+}
+.rate-color {
+    color: #5c0a3f;
 }

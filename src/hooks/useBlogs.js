@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useBlogs = () => {
+const useBlogs = (page, size) => {
     const [blogs, setBlogs] = useState([]);
     useEffect(()=> {
         fetch('https://howling-citadel-94409.herokuapp.com/package')

@@ -2,3 +2,25 @@
   color: #218784;
   font-size: 2.5rem;
 }
+.pagination{
+    margin: 30px;
+}
+.pagination button{
+    padding: 0 10px;
+    margin-right: 20px;
+}
+.pagination .selected{
+    background-color: #5c0a3f;
+    border-color: #5c0a3f;
+    color: white;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #218784 !important;
+    border-color: #218784 !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #5c0a3f !important;
+    border-color: #5c0a3f !important;
+}
