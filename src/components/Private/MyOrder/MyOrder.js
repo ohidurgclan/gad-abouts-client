@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import './MyOrder.css'
 
 const MyOrder = () => {
-    const { users } = useAuth();
+    const { user } = useAuth();
     const [order, setOrder] = useState([]);
 
     const handleUpdate = (id) => {
@@ -23,7 +23,7 @@ const MyOrder = () => {
         if (data.modifiedCount) {
           alert("Update Succeflly");
           fetch(
-            `https://howling-citadel-94409.herokuapp.com/userpackage/${users?.email}`
+            `https://howling-citadel-94409.herokuapp.com/userpackage/${user?.email}`
           )
             .then((res) => res.json())
             .then((data) => {
@@ -51,10 +51,10 @@ const MyOrder = () => {
   };
 
   useEffect(() => {
-      fetch(`https://howling-citadel-94409.herokuapp.com/userpackage/${users?.email}`)
+      fetch(`https://howling-citadel-94409.herokuapp.com/userpackage/${user?.email}`)
           .then((res) => res.json())
           .then((data) => setOrder(data));
-  }, [users]);
+  }, [user]);
     
     return (
         <>

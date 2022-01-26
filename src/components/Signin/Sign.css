@@ -10,3 +10,15 @@
     font-size: 1.5rem;
     font-weight: 500;
 }
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+.login-form input {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 2.2rem;
+    width: 40%;
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from './components/About/About';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import AllBooking from './components/AllBooking/AllBooking';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
 import Notfound from './components/Notfound/Notfound';
@@ -14,6 +13,8 @@ import Authprovider from './contexts/Authprovider';
 import Order from './components/Private/Order/Order';
 import './App.css';
 import MyOrder from './components/Private/MyOrder/MyOrder';
+import Dashboard from './components/Dashboard/Dashboard';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   
@@ -40,16 +41,19 @@ function App() {
           </PrivateRoute>
           <Route exact path="/login">
             <Sign></Sign>
-            </Route>
-          <Route exact path="/allBooking">
-            <AllBooking></AllBooking>
           </Route>
-          <PrivateRoute exact path="/package/:packageKey">
+          <Route exact path="/register">
+            <SignUp></SignUp>
+          </Route>  
+          <PrivateRoute exact path="/package/:packageid">
             <Order></Order>
           </PrivateRoute>
           <PrivateRoute exact path="/myBooking">
             <MyOrder></MyOrder>
-          </PrivateRoute>    
+          </PrivateRoute>
+          <PrivateRoute exact path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>   
           <Route exact path="*">
             <Notfound></Notfound>
           </Route>

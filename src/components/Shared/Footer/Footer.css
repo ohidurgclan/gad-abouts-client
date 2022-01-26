@@ -1,15 +1,15 @@
-.footer-item {
-  height: 80px;
+.footerbg {
   background-color: #218784;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
+  color: white;
 }
-.footer-item h5 {
-  font-size: 1rem;
+.footer-link {
+  text-decoration: none;
+  color: white;
 }
-.footer-txt {
+.footer-link:hover {
+  color: lightcoral;
+  text-decoration: underline;
+}
+.text-name {
   color: #5c0a3f;
 }

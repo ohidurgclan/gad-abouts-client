@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import './Header.css';
 
 const Header = () => {
-  const { users, logOut } = useAuth();
+  const { user, logOut } = useAuth();
     return (
       <>
         <Navbar className="header-section" collapseOnSelect expand="lg">
@@ -17,10 +17,10 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/blogs" activeStyle={{ fontWeight: "bold", color: "#5c0a3f" }}>Blogs</Nav.Link>
               <Nav.Link as={NavLink} to="/about" activeStyle={{fontWeight: "bold",color: "#5c0a3f"}}>About</Nav.Link>
               <Nav.Link as={NavLink} to="/contact" activeStyle={{ fontWeight: "bold", color: "#5c0a3f" }}>Contact</Nav.Link>
-              {users?.email ? <Button onClick={logOut} variant="light">Logout</Button> :
-              <Nav.Link as={NavLink} to="/login" activeStyle={{fontWeight: "bold",color: "#1bbde4"}}>Login</Nav.Link>}
+              {user?.email ? <Button onClick={logOut} variant="light">Logout</Button> : <>
+              <Nav.Link as={NavLink} to="/login" activeStyle={{fontWeight: "bold",color: "#1bbde4"}}>Login</Nav.Link> <Nav.Link as={NavLink} to="/register" activeStyle={{fontWeight: "bold",color: "#1bbde4"}}>Register</Nav.Link></>}
               <Navbar.Text className="ms-2 text-light">
-                {users?.displayName}
+                {user?.displayName}
               </Navbar.Text>
               </Navbar.Collapse>
           </Container>

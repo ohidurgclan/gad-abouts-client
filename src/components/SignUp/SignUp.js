@@ -1,12 +1,11 @@
+import React from 'react';
 import { Alert, Button, Container, Row } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router';
-import useAuth from '../../hooks/useAuth';
-import './Sign.css';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
-const Sign = () => {
-    const { user, loginUser, loading, signInWithGoogle, authError} = useAuth();
+const SignUp = () => {
+        const { user, loginUser, loading, signInWithGoogle, authError} = useAuth();
     const history = useHistory();
     const location = useLocation();
     const { register, handleSubmit } = useForm();
@@ -16,31 +15,30 @@ const Sign = () => {
     const handleGoogleLogin = (data) => {
         signInWithGoogle(location, history)
     };
-    
     return (
         <>
             <Container className="mt-5 mb-5 d-flex">
                 <Row className="justify-content-center">
-                    <h3 style={{ fontWeight: '500', color: ' #5c0a3f', mt: 5, mb: 5 }}>Please Login</h3>
+                    <h2 className="mt-5 mb-5">Please Register</h2>
                     {user?.email && <Alert style={{ width: '37.8%' }} severity="success">Log in Successfully</Alert>}
                     {authError && <Alert style={{ width: '37.8%' }} severity="error">{authError}</Alert>}
                     {!loading && <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                        <h4 style={{ fontWeight: '500', color: ' #5c0a3f' }}>Your Email</h4>
+                        {/* <Typography sx={{ fontFamily: 'ubuntu', fontWeight: '500', color: '#0a2c3d' }} variant="h5">Your Email</Typography> */}
                         <input type="email" placeholder="Email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
-                        <h4 style={{ fontWeight: '500', color: ' #5c0a3f' }}>Your Password</h4>
+                        {/* <Typography sx={{ fontFamily: 'ubuntu', fontWeight: '500', color: '#0a2c3d' }} variant="h5">Your Password</Typography> */}
                         <input type="password" placeholder="Password" {...register("password", {required: true})} />
 
                         <Button style={{ width: '12%', height: '2.5rem', backgroundColor: '#ff5a3c', color: '#fff', marginTop: '4rem',}} type="submit">Login</Button>
                     </form>}
-                    <NavLink style={{ textDecoration: 'none' }} to="/register">
-                        <Button style={{ color: ' #5c0a3f', fontSize: '1.1rem', marginBottom: '2rem'}} variant="text" type="submit">New User? Please Sign Up</Button>
-                    </NavLink>
-                    <h3 className="text-center">- - - - - - - - - - - - - - - - - OR - - - - - - - - - - - - - - - - -</h3>
-                    <Button onClick={handleGoogleLogin} style={{ width: '20%', height: '2.5rem', backgroundColor: '#ff5a3c', color: '#fff', marginTop: '3rem', marginBottom: '2rem' }} type="submit">Login With Google</Button>
+                        {/* {loading && <CircularProgress style={{color: '#ff5a3c'}} />} */}
+                    <br />
+                    <h4 className="text-center">-------------------------------------OR-------------------------------------</h4>
+                    <br />
+                        <button onClick={handleGoogleLogin} className="appointment-btn mb-5 mt-5 w-25">Login With Google</button>
                 </Row>
             </Container>
         </>
     );
 };
 
-export default Sign;
+export default SignUp;

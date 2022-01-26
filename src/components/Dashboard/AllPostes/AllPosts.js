@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Table } from 'react-bootstrap';
-import './AllBooking.css';
+import './AllPostes.css';
 
 const AllBooking = () => {
   const [booking, setBooking] = useState([]);
@@ -62,8 +62,8 @@ const AllBooking = () => {
               <Table bordered className="booking-table">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Package Name</th>
+                    <th>Author Name</th>
+                    <th>Post Title</th>
                     <th>Phone Number</th>
                     <th>Status</th>
                     <th>Update Status</th>
