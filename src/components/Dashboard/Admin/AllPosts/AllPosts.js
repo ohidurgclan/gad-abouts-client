@@ -22,7 +22,7 @@ const AllPosts = () => {
           fetch(`https://protected-crag-64613.herokuapp.com/blog`)
             .then((res) => res.json())
             .then((data) => {
-              setBooking(data.items);
+              setBooking(data);
             });
         }
       });
@@ -51,7 +51,7 @@ const AllPosts = () => {
       .then((data) => {
         setBooking(data);
       });
-  }, []);
+  }, [booking]);
 
   return (
     <>
@@ -65,9 +65,8 @@ const AllPosts = () => {
                   <th>Author Name</th>
                   <th>Post Title</th>
                   <th>Location</th>
-                  <th>Status</th>
                   <th>Update Status</th>
-                  <th>Cancel Booking</th>
+                  <th>Delete Post</th>
                 </tr>
               </thead>
               {booking?.map((order) => (
@@ -76,13 +75,12 @@ const AllPosts = () => {
                     <td>{order.name}</td>
                     <td>{order.title}</td>
                     <td>{order.location}</td>
-                    <td>{order.status}</td>
                     <td>
                       <button
                         onClick={() => handleUpdate(order._id)}
                         className="appointment-btn"
                       >
-                        Approve
+                        {order.status}
                       </button>
                     </td>
                     <td>
@@ -90,7 +88,7 @@ const AllPosts = () => {
                         className="appointment-btn"
                         onClick={() => handleDelete(order._id)}
                       >
-                        Cancel
+                        Delete
                       </button>
                     </td>
                   </tr>

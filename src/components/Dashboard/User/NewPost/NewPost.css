@@ -1,0 +1,10 @@
+.post-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+.post-form input, select, textarea {
+    margin-bottom: 1.5rem;
+    line-height: 2.2rem;
+    width: 50%;
+}

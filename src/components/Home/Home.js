@@ -4,6 +4,9 @@ import Header from "../Shared/Header/Header";
 import Footer from "../Shared/Footer/Footer";
 import Package from "../Subitem/Package/Package";
 import Slider from "../Subitem/Slider/Slider";
+import bannerOne from '../../images/widget/tour-banner-1.jpg';
+import bannerTwo from '../../images/widget/tour-banner-2.jpg';
+import bannerThree from '../../images/widget/tour-banner-3.jpg';
 import "./Home.css";
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -32,7 +35,6 @@ const Home = () => {
             {products?.map((packageItem) => (
               <Package key={packageItem._id} package={packageItem}></Package>
             ))}
-          </Col>
           <div className="pagination">
             {[...Array(pageCount).keys()].map((number) => (
               <Button
@@ -44,6 +46,10 @@ const Home = () => {
               </Button>
             ))}
           </div>
+          </Col>
+          <Col lg={3} md={3} sm={12} xs={12}>
+            <img src="" alt="" />
+          </Col>
         </Row>
       </Container>
       <Footer></Footer>

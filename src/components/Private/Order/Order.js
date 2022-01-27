@@ -20,7 +20,7 @@ const Order = () => {
   useEffect(() => {
     const orderItem = products.find((orderData) => orderData._id === packageid);
     setOrder(orderItem);
-  }, [products]);
+  }, [products, packageid]);
 
   return (
     <>
