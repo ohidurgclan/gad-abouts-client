@@ -1,14 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import useAuth from '../../../../hooks/useAuth';
 import './CreatePost.css';
+import useAuth from '../../../../hooks/useAuth';
 
 const CreatePost = () => {
   const {user} = useAuth();
   const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-      axios.post('http://localhost:7040/blog', data)
+      axios.post('https://protected-crag-64613.herokuapp.com/blog', data)
             .then(res => {
                 if (res.data.insertedId)
                 {
@@ -26,6 +26,10 @@ const CreatePost = () => {
                 <h5>Author Name</h5>
                 <select {...register("name")}>
                     <option value={user?.displayName}>{user?.displayName}</option>
+                </select>
+                <h5>Author Email</h5>
+                <select {...register("email")}>
+                    <option value={user?.email}>{user?.email}</option>
                 </select>
                 <h5>Post Category</h5>
                 <input type="text" placeholder="Category" {...register("category", { required: true })} />

@@ -9,7 +9,7 @@ const CreateAdmin = () => {
     }
     const adminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:7040/users/admin', {
+        fetch('https://protected-crag-64613.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

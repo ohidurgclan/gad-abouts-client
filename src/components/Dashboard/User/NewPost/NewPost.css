@@ -3,8 +3,13 @@
     flex-direction: column;
     margin-bottom: 4rem;
 }
-.post-form input, select, textarea {
+.post-form input, textarea {
     margin-bottom: 1.5rem;
     line-height: 2.2rem;
+    width: 50%;
+}
+.post-form select {
+    margin-bottom: 1.5rem;
+    height: 2.2rem;
     width: 50%;
 }

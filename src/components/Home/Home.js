@@ -47,8 +47,13 @@ const Home = () => {
             ))}
           </div>
           </Col>
-          <Col lg={3} md={3} sm={12} xs={12}>
-            <img src="" alt="" />
+          <Col className="mt-5" lg={3} md={3} sm={12} xs={12}>
+            <img className="img img-fluid mb-5" src={bannerOne} alt="" />
+            <img className="img img-fluid mb-5" src={bannerTwo} alt="" />
+            <img className="img img-fluid mb-5" src={bannerThree} alt="" />
+            <img className="img img-fluid mb-5" src={bannerOne} alt="" />
+            <img className="img img-fluid mb-5" src={bannerTwo} alt="" />
+            <img className="img img-fluid mb-5" src={bannerThree} alt="" />
           </Col>
         </Row>
       </Container>

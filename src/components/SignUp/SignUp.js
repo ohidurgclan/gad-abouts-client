@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer'
 import { useForm } from 'react-hook-form';
@@ -9,14 +9,13 @@ import useAuth from '../../hooks/useAuth';
 const SignUp = () => {
         const { user, registerUser, loading, authError} = useAuth();
     const history = useHistory();
-    const location = useLocation();
 const { register, handleSubmit } = useForm();
     const loginData = data => {
         if (data.password !== data.password2) {
             alert('Your Password Did not Match');
             return;
         }
-        registerUser(data.email, data.password, location, history);
+        registerUser(data.email, data.password, data.displayName, history);
     };
     return (
         <>

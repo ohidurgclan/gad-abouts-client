@@ -31,7 +31,7 @@ const useFirebase = () => {
       .then((userCredential) => {
         setAuthError("");
         const newUser = { email, displayName: name };
-        setUser(newUser);
+        setUser([newUser]);
         // save user to the database
         saveUser(email, name, "POST");
         // send name to firebase after creation
@@ -96,10 +96,10 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`https://protected-crag-64613.herokuapp.com/users/${user?.email}`)
+    fetch(`https://protected-crag-64613.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
-  }, [user?.email]);
+  }, [user.email]);
 
   const logOut = () => {
     setLoading(true);
